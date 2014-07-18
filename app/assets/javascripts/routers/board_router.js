@@ -38,7 +38,6 @@ Trello.Routers.Boards = Backbone.Router.extend({
 
   _getBoard : function (id, callback) {
       var board = Trello.boards.get(id);
-      debugger;
       if (!board){
         board = new Trello.Models.Board({ id: id });
         board.collection = Trello.boards;
@@ -54,7 +53,8 @@ Trello.Routers.Boards = Backbone.Router.extend({
   },
 
   _swapView: function (view) {
-    this._currentView && this_currentView.remove();
+    // debugger;
+    this._currentView && this._currentView.remove();
     this._currentView = view;
 
     this.$rootEl.html(view.render().$el);

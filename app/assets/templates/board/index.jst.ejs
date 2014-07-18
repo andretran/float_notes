@@ -1,5 +1,9 @@
 <ul>
 <% boards.each(function (board){ %>
-  <li><%= board.escape('title') %></li>
+  <li>
+    <a href='#/boards/<%= board.get('id') %>'>
+     <%= board.escape('title') %>
+    </a>
+  </li>
 <% }) %>
 </ul>
