@@ -10,6 +10,20 @@ Trello.Routers.Boards = Backbone.Router.extend({
     'boards/:id' : 'show'
   },
 
+  index : function () {
+    var that = this;
+
+    Trello.boards.fetch({
+      success: function () {
+        var indexView = new Trello.Views.BoardIndex({
+          collection : Trello.boards
+        });
+
+        that._swapView(indexView);
+      }
+    });
+  },
+
   show : function (id) {
     var that = this;
 
@@ -24,8 +38,9 @@ Trello.Routers.Boards = Backbone.Router.extend({
 
   _getBoard : function (id, callback) {
       var board = Trello.boards.get(id);
+      debugger;
       if (!board){
-        board = new Trello.Models.Board( {id: id} );
+        board = new Trello.Models.Board({ id: id });
         board.collection = Trello.boards;
         board.fetch({
           success: function () {
@@ -41,6 +56,7 @@ Trello.Routers.Boards = Backbone.Router.extend({
   _swapView: function (view) {
     this._currentView && this_currentView.remove();
     this._currentView = view;
+
     this.$rootEl.html(view.render().$el);
   }
 
