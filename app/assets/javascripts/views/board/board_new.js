@@ -1,17 +1,17 @@
 Trello.Views.BoardNew = Backbone.View.extend({
-  template: JST['board/new'],
+  template : JST['board/new'],
 
   events: {
     'submit form' : 'submit'
   },
 
-  render: function () {
+  render : function () {
     var renderedContent = this.template({ board : this.model });
     this.$el.html(renderedContent);
     return this;
   },
 
-  submit: function(event){
+  submit : function(event){
     var view = this;
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON()['board'];
