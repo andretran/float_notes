@@ -1,9 +1,8 @@
-<ul>
-<% boards.each(function (board){ %>
-  <li>
-    <a href='#/boards/<%= board.get('id') %>'>
-     <%= board.escape('title') %>
-    </a>
-  </li>
-<% }) %>
-</ul>
+<h1> Index </h1>
+
+<ul id='boards'> </ul>
+
+
+<h3>Create New Board </h3>
+
+<div id='board-new'></div>

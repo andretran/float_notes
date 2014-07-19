@@ -5,11 +5,17 @@ window.Trello = {
   Routers: {},
   initialize: function() {
     Trello.boards = new Trello.Collections.Boards();
+    var boardIndex = new Trello.Views.BoardIndex({ collection : Trello.boards });
 
-    new Trello.Routers.Boards({
-        '$rootEl' : $('#main')
+    Trello.boards.fetch({
+      success: function () {
+        $('#sidebar').html(boardIndex.$el);
+      }
     });
 
+    new Trello.Routers.Boards({
+        '$rootEl' : $('#panel')
+    });
     Backbone.history.start();
   }
 };
