@@ -41,7 +41,7 @@ Trello.Routers.Boards = Backbone.Router.extend({
   },
 
   _getBoard : function (id, callback) {
-      var board = Trello.boards.get(id);
+      var board = Trello.boards.getOrFetch(id);
       if (!board){
         board = new Trello.Models.Board({ id: id });
         board.collection = Trello.boards;
