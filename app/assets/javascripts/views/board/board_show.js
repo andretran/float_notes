@@ -4,7 +4,6 @@ Trello.Views.BoardShow = Backbone.CompositeView.extend({
   initialize : function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.lists(), 'add', this.addList);
-
   },
 
   addList : function (list) {
@@ -24,7 +23,16 @@ Trello.Views.BoardShow = Backbone.CompositeView.extend({
       var newListView = new Trello.Views.ListNew({ model : this.model });
       this.addSubview('#list-form', newListView);
 
+      $('#list-ul').sortable({ update: function (){
+        debugger;
+      } });
+      $('.card-wrapper').sortable({ connectWith: '.card-wrapper' });
+
 
       return this;
+  },
+
+  updateLists : function () {
+    debugger;
   }
 });

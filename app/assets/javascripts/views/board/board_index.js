@@ -33,6 +33,7 @@ Trello.Views.BoardIndex = Backbone.CompositeView.extend({
     var board = new Trello.Models.Board();
     that.addSubview('#board-new', new Trello.Views.BoardNew({ model : board }));
 
+
     return that;
   }
 

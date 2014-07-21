@@ -16,6 +16,71 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.navbar {
+  background-color: #1E628A;
+  border-color: #1E628A;
+
+}
+
+input.card-form{
+   display: block;
+   margin: 1px;
+   border: 1px solid #555;
+   border-color: white;
+   padding: 0.5em;
+   font-size: 15px;
+   line-height: 1.2em;
+   height: 75px;
+   width: 241px;
+   background: #fff;
+   -webkit-appearance: none;
+   -webkit-box-shadow: 0px 0px 0px #fff;
+   -webkit-border-radius: 3px;
+ }
+
+.card-item {
+  border-style: solid;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  margin: 3px;
+  word-wrap: break-word;
+}
+
+.add-card-btn {
+  background-color: #E3E3E3;
+  opacity: 1.0;
+  text-indent: 10px;
+  border-radius: 2px;
+  color:  #C3C3C3;
+  width: 245px;
+  // color: #BFBFBF;
+}
+
+.add-card-btn:hover{
+  background-color: #C3C3C3;
+  color: black;
+}
+
+.list-item {
+  border-style: solid;
+  background-color: #E3E3E3;
+  border-color: #E3E3E3;
+  border-radius: 5px;
+  max-width: 250px;
+}
+
+.list-wrapper-item {
+  display: inline-block;
+  margin: 10px;
+}
+
 body {
   padding-top: 60px;
+  background-color: rgb(35, 113, 159);
+  // color: white;
+}
+
+#panel {
+  width: 2000px;
 }

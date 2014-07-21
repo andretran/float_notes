@@ -1,5 +1,10 @@
 Trello.Views.ListShow = Backbone.CompositeView.extend({
   template : JST['list/show'],
+  className: 'list-wrapper-item',
+
+  events: {
+    'click .add-card-btn' : 'showForm'
+  },
 
   initialize : function () {
     this.listenTo(this.model, 'sync', this.render);
@@ -8,7 +13,7 @@ Trello.Views.ListShow = Backbone.CompositeView.extend({
 
   addCard : function (card) {
     var cardShow = new Trello.Views.CardShow({ model: card });
-    this.addSubview('#cards', cardShow);
+    this.addSubview('.card-wrapper', cardShow);
   },
 
   render : function () {
@@ -20,8 +25,12 @@ Trello.Views.ListShow = Backbone.CompositeView.extend({
       that.addCard(card);
     });
 
-    var newCardView = new Trello.Views.CardNew( {model : this.model });
-    this.addSubview('#cards-form', newCardView);
+    this.$el.find('#card-form-' + this.model.id).html('<div class="add-card-btn"> Add a card... </div>');
     return this;
+  },
+
+  showForm: function () {
+    var newCardView = new Trello.Views.CardNew( {model : this.model });
+    this.$el.find('#card-form-' + this.model.id).html(newCardView.render().$el);
   }
 });
