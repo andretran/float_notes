@@ -5,7 +5,7 @@ Trello.Collections.Boards = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var boards = this;
 
-    var baord;
+    var board;
     if (board = this.get(id)) {
       board.fetch();
     } else {
