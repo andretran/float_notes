@@ -2,8 +2,8 @@
 
 Full stack Web Application built on Ruby on Rails and Backbone.js
 
--Implements JQuery UI to drag, drop and order lists and cards
--MVC framework for boards, lists and cards
+- Implements JQuery UI to drag, drop and order lists and cards
+- MVC framework for boards, lists and cards
 
 
 
