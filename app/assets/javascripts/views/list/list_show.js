@@ -2,6 +2,10 @@ Trello.Views.ListShow = Backbone.CompositeView.extend({
   template : JST['list/show'],
   className: 'list-wrapper-item',
 
+  id: function () {
+    return this.model.id;
+  },
+
   events: {
     'click .add-card-btn' : 'showForm'
   },

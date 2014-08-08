@@ -16,10 +16,14 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.navbar {
+.navbar{
   background-color: #1E628A;
   border-color: #1E628A;
 
+}
+
+.card-wrapper {
+  min-height: 10px;
 }
 
 input.card-form{
@@ -73,14 +77,13 @@ input.card-form{
 .list-wrapper-item {
   display: inline-block;
   margin: 10px;
+  vertical-align: top;
 }
 
 body {
   padding-top: 60px;
   background-color: rgb(35, 113, 159);
+  overflow-x: auto;
+  white-space: nowrap;
   // color: white;
-}
-
-#panel {
-  width: 2000px;
 }
